@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background-color: #1f2937;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,20 +17,20 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-900">
 
-    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full border border-gray-200">
-        <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">Event Calculator</h1>
-        <p class="text-gray-600 mb-6 text-center">Find the number of $20 and $60 events for your total.</p>
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-xl max-w-md w-full border border-gray-700">
+        <h1 class="text-3xl font-bold text-gray-100 mb-4 text-center">Event Calculator</h1>
+        <p class="text-gray-400 mb-6 text-center">Find the number of $20 and $60 events for your total.</p>
 
         <div class="space-y-4">
             <div>
-                <label for="totalEvents" class="block text-sm font-medium text-gray-700 mb-1">Total Number of Events</label>
-                <input type="number" id="totalEvents" placeholder="e.g., 18" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <label for="totalEvents" class="block text-sm font-medium text-gray-300 mb-1">Total Number of Events</label>
+                <input type="number" id="totalEvents" placeholder="e.g., 18" class="mt-1 block w-full px-4 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
             <div>
-                <label for="totalRevenue" class="block text-sm font-medium text-gray-700 mb-1">Total Revenue ($)</label>
-                <input type="number" id="totalRevenue" placeholder="e.g., 480" class="mt-1 block w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <label for="totalRevenue" class="block text-sm font-medium text-gray-300 mb-1">Total Revenue ($)</label>
+                <input type="number" id="totalRevenue" placeholder="e.g., 480" class="mt-1 block w-full px-4 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
             </div>
         </div>
 
@@ -38,15 +38,15 @@
             Calculate
         </button>
 
-        <div id="result" class="mt-6 p-4 rounded-xl border border-gray-300 bg-gray-50 text-gray-800 text-center text-lg font-medium hidden">
+        <div id="result" class="mt-6 p-4 rounded-xl border border-gray-600 bg-gray-700 text-gray-100 text-center text-lg font-medium hidden">
             <!-- Results will be displayed here -->
         </div>
 
         <!-- Custom Modal UI for alerts, replacing `alert()` -->
-        <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center p-4 z-50 hidden">
-            <div class="bg-white rounded-xl p-6 shadow-2xl max-w-sm w-full text-center">
-                <h3 id="modalTitle" class="text-xl font-bold mb-2 text-gray-800"></h3>
-                <p id="modalMessage" class="text-gray-600 mb-4"></p>
+        <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 flex justify-center items-center p-4 z-50 hidden">
+            <div class="bg-gray-800 rounded-xl p-6 shadow-2xl max-w-sm w-full text-center border border-gray-700">
+                <h3 id="modalTitle" class="text-xl font-bold mb-2 text-gray-100"></h3>
+                <p id="modalMessage" class="text-gray-400 mb-4"></p>
                 <button id="modalCloseBtn" class="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors hover:bg-blue-700">OK</button>
             </div>
         </div>
@@ -102,7 +102,7 @@
 
             // Check if the result for $60 events is a positive integer
             if (num60Events < 0 || num60Events % 1 !== 0) {
-                resultDiv.innerHTML = `<span class="text-red-600">No integer solution possible with these values.</span>`;
+                resultDiv.innerHTML = `<span class="text-red-400">No integer solution possible with these values.</span>`;
                 resultDiv.classList.remove('hidden');
                 return;
             }
@@ -112,7 +112,7 @@
 
             // Check if the result for $20 events is a positive integer
             if (num20Events < 0 || num20Events % 1 !== 0) {
-                resultDiv.innerHTML = `<span class="text-red-600">No integer solution possible with these values.</span>`;
+                resultDiv.innerHTML = `<span class="text-red-400">No integer solution possible with these values.</span>`;
                 resultDiv.classList.remove('hidden');
                 return;
             }
